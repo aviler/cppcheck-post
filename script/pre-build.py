@@ -1,14 +1,15 @@
+#
+# This script runs cppcheck before the build process
+#
+
 Import("env")
 from subprocess import call
 import os
 
 print "[PREBUILD] BEGIN ---"
 
-def run_cppcheck(source, target, env):
-    print("Starting cppcheck...\n")
-    call(["cppcheck", os.getcwd()+"src/", "--enable=all"])
-    print("Finished cppcheck...\n")
+# os.getcwd() returns the project absolute path not this file path
+call(["cppcheck", os.getcwd()+"/src/", "--enable=all"])
 
-env.AddPreAction("buildprog", run_cppcheck)
 
 print "[PREBUILD] ENDED ---"
