@@ -2,16 +2,22 @@
 
 ## Description
 
-Repository of Platformio project setup for having cppcheck called everytime we build ESP32 app. This is a helping repo for a blog post here: <link>
+This is an example of Platformio project setup that have cppcheck tool called everytime we run the build process. 
 
 ## References
 
 - [Platformio Advanced Scripting](https://docs.platformio.org/en/latest/projectconf/advanced_scripting.html#advanced-scripting)
 
+## Caution
+
+Both AddPreAction() and AddPostAction() require a target and targets are only available for platformio.ini "post:" scripts. So only use these functions in a post build environment.
+[Reference.](https://github.com/platformio/platformio-core/issues/2973#issuecomment-527423454)
+
+[List of possible targets for the above mentioned functions.](https://docs.platformio.org/en/latest/projectconf/advanced_scripting.html#before-pre-and-after-post-actions)
 
 ## Notes
 
-- TODO FIX:The cppcheck command call is not working 
+- ~~TODO FIX:The cppcheck command call is not working~~
 
 ## Changelog
 
